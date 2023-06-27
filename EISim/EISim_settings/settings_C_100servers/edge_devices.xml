@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<edge_devices>
+	<device arch="x86" os="linux" vmm="xen">
+		<!-- A smartphone  -->
+		<connectivity>wifi</connectivity> <!-- the type of network connection -->
+		<mobility>true</mobility> <!-- the device is mobile or fixed -->
+		<speed>1.1</speed> <!-- the speed of the device in meters per second : 1.4m/s equals 5km/h, 0 = non mobile-->
+		<minPauseDuration>60</minPauseDuration> <!-- the minimum delay before moving to a new location-->
+		<maxPauseDuration>300</maxPauseDuration> <!-- the maximum delay before moving to a new location-->
+		<minMobilityDuration>60</minMobilityDuration> <!-- the minimum delay before stopping-->
+		<maxMobilityDuration>300</maxMobilityDuration> <!-- the maximum delay before stopping-->
+		<battery>true</battery> <!-- relies on battery? -->
+		<percentage>30</percentage> <!-- percentage of this device type -->
+		<batteryCapacity>19.25</batteryCapacity> <!-- battery capacity in Watt-Hour -->
+		<initialBatteryLevel>100</initialBatteryLevel> <!-- initial battery percentage. e.g. set it to 50 in order to generate devices with 50% remaining energy-->
+		<idleConsumption>0.9</idleConsumption> <!-- idle energy consumption/second, default=0 .000010975 -->
+		<maxConsumption>6.2</maxConsumption> <!-- max energy consumption/second, when device cpu is use at 100% -->
+		<isOrchestrator>false</isOrchestrator> <!-- it has a task orchestrator or not -->
+		<generateTasks>true</generateTasks> <!-- it generates data/tasks or not -->
+		<cores>6</cores>
+		<mips>6000</mips>
+		<ram>6000</ram> <!-- MB -->
+		<storage>128000</storage> <!-- MB -->
+	</device>
+	<device arch="x86" os="linux" vmm="xen">
+		<!-- Another smartphone, but lower capacity -->
+		<connectivity>wifi</connectivity>
+		<mobility>true</mobility>
+		<speed>1.1</speed> <!-- about 4 km/h -->
+		<minPauseDuration>60</minPauseDuration>
+		<maxPauseDuration>300</maxPauseDuration>
+		<minMobilityDuration>60</minMobilityDuration>
+		<maxMobilityDuration>300</maxMobilityDuration>
+		<battery>true</battery>
+		<percentage>40</percentage>
+		<batteryCapacity>15.4</batteryCapacity>
+		<initialBatteryLevel>100</initialBatteryLevel>
+		<idleConsumption>0.6</idleConsumption>
+		<maxConsumption>5.5</maxConsumption>
+		<isOrchestrator>false</isOrchestrator>
+		<generateTasks>true</generateTasks>
+		<cores>4</cores>
+		<mips>4000</mips>
+		<ram>4000</ram>
+		<storage>64000</storage>
+	</device>
+	<device arch="x86" os="linux" vmm="xen">
+		<!-- A tablet -->
+		<connectivity>wifi</connectivity>
+		<mobility>true</mobility>
+		<speed>0.6</speed> <!-- about 2 km/h -->
+		<minPauseDuration>180</minPauseDuration>
+		<maxPauseDuration>600</maxPauseDuration>
+		<minMobilityDuration>60</minMobilityDuration>
+		<maxMobilityDuration>300</maxMobilityDuration>
+		<battery>true</battery>
+		<percentage>20</percentage>
+		<batteryCapacity>25.9</batteryCapacity>
+		<initialBatteryLevel>100</initialBatteryLevel>
+		<idleConsumption>1.1</idleConsumption>
+		<maxConsumption>6.5</maxConsumption>
+		<isOrchestrator>false</isOrchestrator>
+		<generateTasks>true</generateTasks>
+		<cores>4</cores>
+		<mips>3000</mips>
+		<ram>2000</ram>
+		<storage>32000</storage>
+	</device>
+	<device arch="x86" os="linux" vmm="xen">
+		<!-- A non-mobile laptop -->
+		<connectivity>wifi</connectivity>
+		<mobility>false</mobility>
+		<speed>0</speed>
+		<minPauseDuration>0</minPauseDuration>
+		<maxPauseDuration>0</maxPauseDuration>
+		<minMobilityDuration>0</minMobilityDuration>
+		<maxMobilityDuration>0</maxMobilityDuration>
+		<battery>true</battery>
+		<percentage>10</percentage>
+		<batteryCapacity>56.5</batteryCapacity>
+		<initialBatteryLevel>100</initialBatteryLevel>
+		<idleConsumption>1.7</idleConsumption>
+		<maxConsumption>23.6</maxConsumption>
+		<isOrchestrator>false</isOrchestrator>
+		<generateTasks>true</generateTasks>
+		<cores>6</cores>
+		<mips>7000</mips>
+		<ram>8000</ram>
+		<storage>256000</storage>
+	</device>
+</edge_devices>

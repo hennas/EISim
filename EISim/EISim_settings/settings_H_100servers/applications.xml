@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<applications>
+	<application name="App1">
+        <!-- Type for the application, can be used, e.g., in task orchestration. -->
+		<type>App1</type> 
+		<!-- Rate for a Poisson process. The rate is given in tasks per second, and it must be > 0. -->
+		<poissonRate>1</poissonRate>
+        <!-- Percentage of devices that have this application type. -->
+		<usagePercentage>100</usagePercentage> 
+        <!-- Deadline for each task in seconds. -->
+		<latency>0.5</latency>
+		<!-- Container size is used when registry is enabled (downloading containers)
+        and when determining how much RAM and storage a task uses on a computing node.
+        Container size for a task is an integer drawn randomly from U(containerSizeMin, containerSizeMax).
+        Both min and max values must be >= 0, and min <= max.
+        Setting both min and max values to the same value means that every task will have the same container size.
+        Setting min value and/or max value to 0 means that the container size for a task is set equal to the task's request size. -->
+		<containerSizeMin>0</containerSizeMin> <!-- in kB -->
+		<containerSizeMax>0</containerSizeMax> <!-- in kB -->
+        <!-- Request size is used when sending a task through the network.
+        It corresponds to file size and can be thought to include, e.g., software codes, system settings, inputs. 
+        Request size for a task is an integer drawn randomly from U(requestSizeMin, requestSizeMax).
+        Both min and max values must be > 0, and min <= max.
+        Setting both min and max values to the same value means that every task will have the same request size.-->
+        <requestSizeMin>100</requestSizeMin> <!-- in kB -->
+		<requestSizeMax>1000</requestSizeMax> <!-- in kB -->
+		<!-- Result size is used when sending a task's output back to the task's owner after the task has finished. 
+        It is determined as a ratio of the task's request size. 
+		This ratio is drawn randomly from U(resultRatioMin, resultRatioMin).
+        Both min and max values must be > 0 and <= 1, and min <= max.
+        Setting both min and max values to the same value means that the result ratio will be the same for every task. -->
+		<resultRatioMin>0.2</resultRatioMin>
+		<resultRatioMax>0.8</resultRatioMax>
+        <!-- The expected value of the exponential distribution from which a task's length in MIs is sampled. -->
+		<taskLength>2000</taskLength> <!-- in Million Instructions (MIs) -->
+	</application>
+</applications>
