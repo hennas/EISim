@@ -114,11 +114,13 @@ Simulations can be run either through the command line (recommended) or through 
 
 #### From command line
 
-After cloning the project, navigate to the EISim folder and run:
+After cloning the project, navigate to the EISim folder that contains the pom.xml file and run:
 
 ```
-mvn package
+mvn clean package
 ```
+
+If you want to use EISim as a dependency in other projects locally, run `mvn clean install` instead. This also installs the package into the local repository.
 
 To see the available options for running the simulation, use:
 
@@ -134,7 +136,7 @@ mvn -q exec:java -Dexec.mainClass="com.github.hennas.eisim.Main" -Dexec.args="-i
 #### From Eclipse IDE
 
 1. Import the project to the IDE by selecting the location where it was cloned
-    * File -> New -> Java Project, and choose the EISim folder as the location
+    * File -> New -> Java Project, and choose the EISim folder that contains the pom.xml file as the location
 1. Convert the project to a Maven project
     * Right click the project -> Configure -> Convert to Maven Project
 1. Run the project from the Main class

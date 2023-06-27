@@ -14,7 +14,7 @@ def combine_split_episodes(output_dir):
     Checks whether the output for some simulation run (one episode) in the provided output directory has been saved into two
     separate folders. For every such incident, combines the results into the same folder and removes the excess folder.
     
-    In PureEdgeSim, simulation output is saved into a folder that is named based on the start time of the simulation. The time
+    In EISim, simulation output is saved into a folder that is named based on the start time of the simulation. The time
     is recorded up to the precision of seconds. When running several simulation scenarios in parallel, each thread records 
     their own start time. In some rare occasions, the second may change between the start time of the first thread and the 
     start time of the last thread, resulting in two output folders for the same simulation run. This method recognizes such
