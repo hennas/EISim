@@ -59,7 +59,7 @@ Exclusive features:
 * Tools for automatic generation of 1) Metropolitan Area Network (including AP placement, topology creation and edge server placement), 2) edge server clusters, 
 and 3) edge_datacenters.xml setting files (see [Environment setup](Environment_setup/))
 * A Deep Deterministic Policy Gradient (DDPG) based default implementation for a pricing agent
-    * In each control topology, cluster heads functions as pricing agents that decide a price for task execution on the resources under their control
+    * In each control topology, cluster heads function as pricing agents that decide a price for task execution on the resources in their cluster.
         * For these agents, the system time is divided into slots and a new price decision is made at the beginning of a slot. Default slot length is 5 seconds. 
     * Users can easily plug in their own implementation for the pricing agent
 * Scripts that can be used to run simulations for hyperparameter tuning, training and evaluation (See [Scripts](EISim/Scripts/))
