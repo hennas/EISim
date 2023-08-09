@@ -11,7 +11,7 @@ rSteps=500
 for seed in {101..200}
 do 
     echo -e "${YELLOW}TRAINING round with seed: $seed${NC}"
-    mvn -q exec:java -Dexec.mainClass="com.github.hennas.eisim.Main" -Dexec.args="-i EISim_settings/settings_C_20servers/ -o EISim_output/C_20results/output_C_20servers_training/ -m EISim_output/C_20results/models_C_20servers/ -T -a  -c  -R $rSteps -s $seed"
+    mvn -q exec:java -Dexec.mainClass="com.github.hennas.eisim.Main" -Dexec.args="-i EISim_settings/settings_C_20servers/ -o EISim_output/C_20results/output_C_20servers_training/ -m EISim_output/C_20results/models_C_20servers/ -T -a 0.0005 -c 0.0005 -R $rSteps -s $seed"
     if [ $seed -eq 104 ]; then
         # Exploring randomly during the first four training rounds, after which only the first decision is random
         rSteps=1
