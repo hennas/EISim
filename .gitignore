@@ -1,5 +1,6 @@
 target/
 test/
+EISim_output/
 
 # Eclipse project files
 .classpath
