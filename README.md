@@ -66,11 +66,11 @@ and 3) edge_datacenters.xml setting files (see [Environment setup](Environment_s
     * Simulation runs can be considered as pseudo-episodes over which the pricing agents can be trained and evaluated
     * Agents save their state at the end of a simulation run (episode), and load the state at the beginning of a new one
 * Tools for result plotting
-    * Plots for comparing the performance of different hyperparameter combinations
+    * [Plots](Result_plotting/hyperparam_plots.ipynb) for comparing the performance of different hyperparameter combinations
         * Metrics: The cumulative return (profit) of the whole system and the cumulative return of each pricing agent in the system
-    * Plots for observing the training progress of the agents
+    * [Plots](EISim/plot_training_progress.py) for observing the training progress of the agents
         * The cumulative return of the whole system and the cumulative return of each pricing agent are plotted against training episodes
-    * Plots for comparing the final performance of the system after running evaluation episodes with the final trained models
+    * [Plots](Result_plotting/final_evaluation_plots.ipynb) for comparing the final performance of the system after running evaluation episodes with the final trained models
         * The main comparison axis is the three different control topologies
         * Several metrics are plotted
 
