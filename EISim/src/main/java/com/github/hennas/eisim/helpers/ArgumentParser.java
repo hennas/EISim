@@ -32,7 +32,7 @@ public class ArgumentParser {
 		getOptions();
 		this.helpOptions = new Options();
 		helpOptions.addOption(Option.builder("h").longOpt("help").hasArg(false).build());
-		this.helpmsg = "mvn -q exec:java -Dexec.mainClass=\"customimplementation.Main\" "
+		this.helpmsg = "mvn -q exec:java -Dexec.mainClass=\"com.github.hennas.eisim.Main\" "
 				+ "-Dexec.args=\"-i <setting_folder> -o <output_folder> -m <model_folder> [OTHER OPTIONS]\"";
 	}
 	
