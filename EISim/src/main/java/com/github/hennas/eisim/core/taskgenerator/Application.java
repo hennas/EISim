@@ -1,7 +1,7 @@
 package com.github.hennas.eisim.core.taskgenerator;
 
 /**
- * The instances of this class represent application types for IESim.
+ * The instances of this class represent application types for EISim.
  * Replaces the original PureEdgeSim 5.1.0 {@code Application} class.
  * 
  * @author Henna Kokkonen

@@ -248,31 +248,32 @@ public class SimLog {
 	}
 
 	public void printNetworkRelatedResults() {
+		double totalNetUsage = totalLanUsage + totalManUsage + totalWanUsage;
 		print("Network usage                                                           :"
-				+ padLeftSpaces(decimalFormat.format(totalLanUsage + totalManUsage + totalWanUsage), 20)
+				+ padLeftSpaces(decimalFormat.format(totalNetUsage), 20)
 				+ " seconds (The total traffic: " + decimalFormat.format(totalTraffic) + " (MBytes) )");
 		print("                                                                         " + "  Wan="
 				+ padLeftSpaces(decimalFormat.format(totalWanUsage), 14) + " seconds ("
-				+ decimalFormat.format(totalWanUsage * 100 / (totalLanUsage + totalManUsage + totalWanUsage))
+				+ decimalFormat.format(totalWanUsage * 100 / totalNetUsage)
 				+ " %% of total usage, WAN used when downloading containers="
 				+ decimalFormat.format(totalWanUsage == 0 ? 0 : containersWanUsage * 100 / totalWanUsage)
 				+ " %% of WAN usage )");
 		print("                                                                         " + "  Man="
 				+ padLeftSpaces(decimalFormat.format(totalManUsage), 14) + " seconds ("
-				+ decimalFormat.format(totalManUsage * 100 / (totalLanUsage + totalManUsage + totalWanUsage))
+				+ decimalFormat.format(totalManUsage * 100 / totalNetUsage)
 				+ " %% of total usage, MAN used when downloading containers="
 				+ decimalFormat.format(totalManUsage == 0 ? 0 : containersManUsage * 100 / totalManUsage)
 				+ " %% of MAN usage )");
 		print("                                                                         " + "  Lan="
 				+ padLeftSpaces(decimalFormat.format(totalLanUsage), 14) + " seconds ("
-				+ decimalFormat.format(totalLanUsage * 100 / (totalLanUsage + totalManUsage + totalWanUsage))
+				+ decimalFormat.format(totalLanUsage * 100 / totalNetUsage)
 				+ " %% of total usage, LAN used when downloading containers="
 				+ decimalFormat.format(containersLanUsage * 100 / totalLanUsage) + " %% of LAN usage )");
 		print("Average transfer speed                                                  :"
 				+ padLeftSpaces(decimalFormat.format(totalBandwidth / transfersCount), 20) + " Mbps  ");
 		// Add these values to the las item of the results list
 		resultsList.set(resultsList.size() - 1,
-				resultsList.get(resultsList.size() - 1) + totalLanUsage + "," + totalWanUsage + "," + totalLanUsage
+				resultsList.get(resultsList.size() - 1) + totalNetUsage + "," + totalWanUsage + "," + totalLanUsage
 						+ "," + totalTraffic + "," + containersWanUsage + "," + containersLanUsage + ","
 						+ (totalBandwidth / transfersCount) + ",");
 	}
