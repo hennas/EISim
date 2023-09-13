@@ -81,7 +81,7 @@ def plot_training_progress(output_dir, window_size=5, fpath=None):
         n_of_episodes = len(total_returns)
         episodes = [i for i in range(1, n_of_episodes+1)]
         fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 12))
-        fig.suptitle('Training progress for scenario: {}\n'.format(scenario), fontsize=14, fontweight='bold')
+        fig.suptitle(f'Training progress for scenario: {scenario}\n', fontsize=14, fontweight='bold')
         
         ax1.plot(episodes, total_returns, color='steelblue')
         ax1.plot(episodes, total_returns_MA, color='red', linewidth=3)
@@ -94,10 +94,6 @@ def plot_training_progress(output_dir, window_size=5, fpath=None):
             ax2.plot(episodes, cum_returns[:,ai], label=agent_labels[ai], linewidth=1)
             ax3.plot(episodes, avg_prices[:,ai], label=agent_labels[ai], linewidth=1)
             
-        if len(agent_labels) < 21:
-            ax2.legend(loc='upper left', bbox_to_anchor=(1, 1))
-            ax3.legend(loc='upper left', bbox_to_anchor=(1, 1))
-            
         ax2.set_title('Cumulative return per training episode for each agent')
         ax2.set_xlabel('Training episode')
         ax2.grid(True, 'major', 'y', linewidth=0.5, c='k', alpha=0.3)
@@ -107,6 +103,19 @@ def plot_training_progress(output_dir, window_size=5, fpath=None):
         ax3.set_xlabel('Training episode')
         ax3.grid(True, 'major', 'y', linewidth=0.5, c='k', alpha=0.3)
         ax3.set_ylim(0, 1)
+        
+        # Only adding the legend if there are 20 agents at maximum
+        if len(agent_labels) < 21:
+            # Gets the tight bounding box of the x axis, including the axis and its decorators (x label, tick labels).
+            x_bbox2 = ax2.get_xaxis().get_tightbbox(fig.canvas.get_renderer()) 
+            # Gives the bottom left corner of the box in axis coordinates
+            _, ymin2 = ax2.transAxes.inverted().transform(x_bbox2.min) 
+            # The legend is placed below the figure, ymin is used to avoid placing on top of x tick labels
+            ax2.legend(loc='upper center', bbox_to_anchor=(0.5, ymin2), ncol=10)
+            
+            x_bbox3 = ax3.get_xaxis().get_tightbbox(fig.canvas.get_renderer())
+            _, ymin3 = ax3.transAxes.inverted().transform(x_bbox3.min)
+            ax3.legend(loc='upper center', bbox_to_anchor=(0.5, ymin3), ncol=10)
         
         fig.tight_layout()
         
@@ -255,7 +264,7 @@ def format_y_labels(value, position):
     '''
     if value == 0:
         return str(int(value))
-    return '{}M'.format(round(value * 1e-6, 3))
+    return f'{round(value * 1e-6, 3)}M'
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
