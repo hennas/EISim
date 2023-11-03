@@ -1,5 +1,12 @@
 # Edge Intelligence Simulator (EISim)
 
+**Article available: [EISim: A Platform for Simulating Intelligent Edge Orchestration Solutions (arXiv:2311.01224)](https://arxiv.org/abs/2311.01224)**
+
+For more in-depth look into the background of EISim and the justifications and explanations of design choices, **[see my thesis](http://urn.fi/URN:NBN:fi:oulu-202310133119)**.
+
+***If cited, please cite the article as Kokkonen, H., Pirttikangas, S. & Lovén, L. (2023). EISim: A Platform for Simulating Intelligent Edge Orchestration Solutions. 
+arXiv:2311.01224. doi:10.48550/ARXIV.2311.01224***
+
 ## Purpose
 
 EISim is developed towards supporting easier testing and evaluation of intelligent orchestration methods in the device-edge-cloud continuum. 
@@ -97,7 +104,7 @@ The default implementation of the EISim is focused on edge based processing, tha
 or offloaded to the edge servers. However, due to the high extensibility of the EISim, it is easy to change these implementations to also account, e.g., 
 offloading to the cloud datacenters.
 
-## Usage
+## Use
 
 ### Requirements
 
